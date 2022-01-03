@@ -7,15 +7,15 @@ module.exports = function( grunt ) {
       all: [ 'src/library/js/*.js' ]
     },
     sass: {
-        options: {
-            implementation: sass,
-            sourceMap: true
-        },
-        dist: {
-            files: {
-                'main.css': 'main.scss'
-            }
+      options: {
+        implementation: sass,
+        sourceMap: false
+      },
+      dist: {
+        files: {
+          './src/library/css/main.css': './src/library/scss/main.scss'
         }
+      }
     },
     watch: {
       files: [ 'src/library/scss/main.scss' ],
