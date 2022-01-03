@@ -1,3 +1,4 @@
+const sass = require('node-sass');
 require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
 module.exports = function(grunt) {
@@ -11,14 +12,14 @@ module.exports = function(grunt) {
         }
       }
     },
-		sass: {
+    sass: {
         options: {
             implementation: sass,
             sourceMap: true
         },
         dist: {
             files: {
-                'build/library/css/main.css': 'src/library/scss/main.scss'
+                'main.css': 'main.scss'
             }
         }
     },
