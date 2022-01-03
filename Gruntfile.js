@@ -18,8 +18,14 @@ module.exports = function( grunt ) {
       }
     },
     watch: {
-      files: [ 'src/library/scss/main.scss' ],
-      tasks: [ 'jshint', 'sass' ]
+      js: {
+        files: [ 'src/library/js/*.js' ],
+        tasks: [ 'jshint' ]
+      },
+      scss: {
+        files: [ 'src/library/scss/*.scss' ],
+        tasks: [ 'sass' ]
+      }
     }
   } );
 
