@@ -1,16 +1,10 @@
-const sass = require('node-sass');
-require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
+const sass = require( 'node-sass' );
 
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 
-  grunt.initConfig({
+  grunt.initConfig( {
     jshint: {
-      files: ['src/library/js/*.js'],
-      options: {
-        globals: {
-          jQuery: true
-        }
-      }
+      all: [ 'src/library/js/*.js' ]
     },
     sass: {
         options: {
@@ -24,15 +18,13 @@ module.exports = function(grunt) {
         }
     },
     watch: {
-      files: ['src/library/scss/main.scss'],
-      tasks: ['jshint', 'sass']
+      files: [ 'src/library/scss/main.scss' ],
+      tasks: [ 'jshint', 'sass' ]
     }
-  });
+  } );
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask( 'default', [ 'sass' ] );
 
 };
